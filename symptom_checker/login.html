@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Login - Thyroid Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+
+        .error-message {
+            color: #E74C3C;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem auto;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container login-container">
+        <header>
+            <div class="logo-placeholder">TC</div>
+            <h1>Patient Portal</h1>
+            <p>Enter your patient credentials to access the symptom checker.</p>
+        </header>
+
+        <main>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="patient-name">Patient Name</label>
+                    <input type="text" id="patient-name" placeholder="e.g. vishnu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="e.g. vishnu@123" required>
+                    <div id="login-error" class="error-message">Invalid Patient Name or Password. Please try again.
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">Secure Login</button>
+            </form>
+            <p class="disclaimer">For demonstration purposes, any Patient Name and Password will work.</p>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const patientName = document.getElementById('patient-name').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (patientName === '' || password === '') {
+                document.getElementById('login-error').style.display = 'block';
+                return;
+            }
+
+            // Simulate authentication and redirect
+            // In a real app we would validate these credentials via API
+            sessionStorage.setItem('currentPatientName', patientName);
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>
