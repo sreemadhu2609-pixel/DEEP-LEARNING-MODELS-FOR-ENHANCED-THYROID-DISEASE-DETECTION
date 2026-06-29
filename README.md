@@ -1,4 +1,6 @@
-# Thyroid Nodule Detection & Symptom Checker
+ "This project is a fork of [Kethan Reddy Yanamala's original work](https://github.com/kethanreddyyanamala/DEEP-LEARNING-MODELS-FOR-ENHANCED-THYROID-DISEASE-DETECTION )." This ensures proper attribution.
+ 
+ # Thyroid Nodule Detection & Symptom Checker
 
 This repository contains a comprehensive system for thyroid nodule detection and symptom analysis, developed as a two-part project:
 
